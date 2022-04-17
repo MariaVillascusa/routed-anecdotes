@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 const AnecdoteList = ({ anecdotes, vote }) => (
     <div>
@@ -5,7 +6,8 @@ const AnecdoteList = ({ anecdotes, vote }) => (
         <ul>
             {anecdotes.map(anecdote =>
                 <li key={anecdote.id} >
-                    {anecdote.content} - {anecdote.votes} votes
+                    <Link to={`/anecdotes/${anecdote.id}`}>{anecdote.content}</Link>
+                     &nbsp;- {anecdote.votes} votes
                     <button type='button' onClick={() => vote(anecdote.id)}>
                         Vote
                     </button>
