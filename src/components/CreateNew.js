@@ -8,7 +8,6 @@ const CreateNew = (props) => {
   
     const handleSubmit = (e) => {
       e.preventDefault()
-      console.log(props.addNew)
       props.addNew({
         content,
         author,
