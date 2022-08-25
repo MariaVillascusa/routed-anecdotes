@@ -1,9 +1,9 @@
 import { useField } from '../hooks'
 
 const CreateNew = ({ addNew }) => {
-  const content = useField({ name: 'content' })
-  const author = useField({ name: 'content' })
-  const info = useField({ name: 'content' })
+  const content = useField()
+  const author = useField()
+  const info = useField()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -22,15 +22,15 @@ const CreateNew = ({ addNew }) => {
       <form onSubmit={handleSubmit}>
         <div>
           content
-          <input {...content} reset='' />
+          <input value={content.value} onChange={content.onChange} />
         </div>
         <div>
           author
-          <input {...author} reset='' />
+          <input value={author.value} onChange={author.onChange} />
         </div>
         <div>
           url for more info
-          <input {...info} reset='' />
+          <input value={info.value} onChange={info.onChange} />
         </div>
         <button>create</button>
         <button type='button' onClick={() => {
